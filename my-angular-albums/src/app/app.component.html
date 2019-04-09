@@ -1,20 +1,64 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center;">
-  <h1 class="jumbotron my-5 mx-5">
-    Welcome to {{ title }}!
-  </h1>
+    <h1 class="jumbotron my-5 mx-5">Welcome to {{ title }}!</h1>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container">
+    <div class="card-deck">
+        <div class="card">
+            <img
+                class="card-img-top cover"
+                src="assets/img/{{ albumsArray[0].id }}.jpg"
+                alt="Album Cover for {{ albumsArray[0].album_name }}"
+                style="border: 1px solid grey"
+            />
+            <div class="card-body">
+                <h4 class="card-title">{{ albumsArray[0].artist }}</h4>
+                <ul style="list-style: none;">
+                    <li>{{ albumsArray[0].album_name }}</li>
+                    <li>Released: {{ albumsArray[0].year }}</li>
+                    <li>
+                        {{ albumsArray[0].price }} {{ albumsArray[0].currency }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <img
+                class="card-img-top cover"
+                src="assets/img/{{ albumsArray[1].id }}.jpg"
+                alt="Album Cover for {{ albumsArray[1].album_name }}"
+                style="border: 1px solid grey"
+            />
+            <div class="card-body">
+                <h4 class="card-title">{{ albumsArray[1].artist }}</h4>
+                <ul style="list-style: none;">
+                    <li>{{ albumsArray[1].album_name }}</li>
+                    <li>Released: {{ albumsArray[1].year }}</li>
+                    <li>
+                        {{ albumsArray[1].price }} {{ albumsArray[1].currency }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <img
+                class="card-img-top cover"
+                src="assets/img/{{ albumsArray[2].id }}.jpg"
+                alt="Album Cover for {{ albumsArray[2].album_name }}"
+                style="border: 1px solid grey"
+            />
+            <div class="card-body">
+                <h4 class="card-title">{{ albumsArray[2].artist }}</h4>
+                <ul style="list-style: none;">
+                    <li>{{ albumsArray[2].album_name }}</li>
+                    <li>Released: {{ albumsArray[2].year }}</li>
+                    <li>
+                        {{ albumsArray[2].price }} {{ albumsArray[2].currency }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
 <router-outlet></router-outlet>
