@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { Album } from '../album.model';
 import { ALBUMS } from '../albums.data';
@@ -10,7 +11,8 @@ import { AlbumService } from '../shared/album.service';
     styleUrls: ['./album-list.component.css'],
 })
 export class AlbumListComponent implements OnInit {
-    albumsArray: Album[];
+    //albumsArray: Album[];
+    albums: Observable<Album[]>;
 
     @Output()
     albumSelected: EventEmitter<Album> = new EventEmitter<Album>();
@@ -18,7 +20,7 @@ export class AlbumListComponent implements OnInit {
     constructor(private albumService: AlbumService) {}
 
     getAlbums() {
-        this.albumsArray = this.albumService.getAlbums();
+        this.albums = this.albumService.getAlbums();
     }
 
     ngOnInit(): void {
