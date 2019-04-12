@@ -11,8 +11,8 @@ import { AlbumService } from '../shared/album.service';
     styleUrls: ['./album-list.component.css'],
 })
 export class AlbumListComponent implements OnInit {
-    //albumsArray: Album[];
-    albums: Observable<Album[]>;
+    albums: Album[];
+    //albums: Observable<Album[]>;
 
     @Output()
     albumSelected: EventEmitter<Album> = new EventEmitter<Album>();
@@ -20,11 +20,17 @@ export class AlbumListComponent implements OnInit {
     constructor(private albumService: AlbumService) {}
 
     getAlbums() {
-        this.albums = this.albumService.getAlbums();
+        //this.albums = this.albumService.getAlbums();
+        this.albumService.getAlbums().subscribe(
+            (albums: Album[]) => {
+                this.albums = albums;
+            },
+            error => console.log('Error: ', error)
+        );
     }
 
     ngOnInit(): void {
-        //this.albumsArray = ALBUMS;
+        //this.albums = ALBUMS;
         this.getAlbums();
     }
 

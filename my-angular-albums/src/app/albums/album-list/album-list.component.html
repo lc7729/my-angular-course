@@ -1,7 +1,7 @@
 <div class="container">
     <div class="card-deck">
         <app-album-card
-            *ngFor="let album of (albums | async)"
+            *ngFor="let album of albums"
             [album]="album"
             (albumClicked)="parentFunctionHandler($event)"
         ></app-album-card>
