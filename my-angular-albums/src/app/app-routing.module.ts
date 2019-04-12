@@ -9,8 +9,8 @@ const routes: Routes = [
     { path: '', redirectTo: '/about', pathMatch: 'full' },
     { path: 'about', component: AboutComponent },
     { path: 'albums', component: AlbumListComponent },
-    { path: '**', component: NotfoundComponent, pathMatch: 'full' },
     { path: 'albums/:id', component: AlbumDetailsComponent },
+    { path: '**', component: NotfoundComponent, pathMatch: 'full' },
 ];
 
 @NgModule({
