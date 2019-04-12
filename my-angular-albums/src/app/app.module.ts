@@ -10,6 +10,7 @@ import { ReverseStrPipe } from './reverse-str.pipe';
 import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { AlbumDetailsComponent } from './albums/album-details/album-details.component';
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
         AboutComponent,
         NavbarComponent,
         NotfoundComponent,
+        AlbumDetailsComponent,
     ],
     imports: [BrowserModule, AppRoutingModule, HttpClientModule],
     providers: [],
